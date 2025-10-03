@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>InvoiceFlow - Get Paid Faster | Simple Invoicing for Freelancers</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Create professional invoices in seconds. Get paid faster with automated reminders and one-click payments. Free 14-day trial, no credit card required.">
+    
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="InvoiceFlow - Get Paid Faster">
+    <meta property="og:description" content="Simple invoicing software for freelancers and small businesses">
+    <meta property="og:image" content="https://placehold.co/1200x630/png?text=InvoiceFlow">    
+    <!-- Favicon -->
+  </head>
+
+  <body class="bg-white">
+    <!-- Simple Header -->
+    <header class="absolute inset-x-0 top-0 z-50">
+      <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+        <div class="flex lg:flex-1">
+          <%= link_to root_path, class: "text-2xl font-bold text-blue-600" do %>
+            InvoiceFlow
+          <% end %>
+        </div>
+        <div class="flex gap-x-4">
+          <%= link_to "Pricing", pricing_path, class: "text-sm font-semibold text-gray-900 hover:text-blue-600" %>
+          <%= link_to "Sign in", new_user_session_path, class: "text-sm font-semibold text-gray-900 hover:text-blue-600" %>
+          <%= link_to "Start free trial", new_user_registration_path, class: "rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500" %>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <%= yield %>
+    </main>
+
+    <!-- Simple Footer -->
+    <footer class="bg-gray-50 mt-32">
+      <div class="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+        <div class="text-center text-sm text-gray-600">
+          <p>&copy; <%= Date.current.year %> InvoiceFlow. All rights reserved.</p>
+          <div class="mt-4 space-x-4">
+            <%= link_to "Privacy", "#", class: "hover:text-gray-900" %>
+            <%= link_to "Terms", "#", class: "hover:text-gray-900" %>
+            <%= link_to "Contact", "#", class: "hover:text-gray-900" %>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
